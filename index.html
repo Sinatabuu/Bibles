@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bibles for Kenya · 20-Bible Drive</title>
+    <meta
+      name="description"
+      content="Help us collect 20 Bibles and raise shipping support for distribution to 500+ interdenominational congregations across Kilifi, Nairobi, and Meru in Kenya."
+    />
+
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --muted2: rgba(255, 255, 255, 0.6);
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #6ee7b7;
+        --accent2: #60a5fa;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 800px at 20% 0%, rgba(96,165,250,0.22), transparent 60%),
+                    radial-gradient(1200px 800px at 90% 10%, rgba(110,231,183,0.18), transparent 55%),
+                    linear-gradient(180deg, #070b14, #0b1220 45%, #060a13);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(7, 11, 20, 0.65);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .badge {
+        font-size: 12px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.04);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+      .navlinks {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-weight: 600;
+        transition: transform 0.08s ease, background 0.15s ease, border 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.06); }
+      .btn-primary {
+        background: linear-gradient(135deg, rgba(110,231,183,0.22), rgba(96,165,250,0.18));
+        border-color: rgba(110,231,183,0.35);
+      }
+      .btn-strong {
+        background: linear-gradient(135deg, rgba(110,231,183,0.35), rgba(96,165,250,0.22));
+        border-color: rgba(110,231,183,0.55);
+        box-shadow: var(--shadow);
+      }
+      .btn-outline { background: transparent; }
+
+      .hero { padding: 44px 0 18px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+      .kicker {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 13px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.03);
+      }
+      .dot {
+        width: 8px; height: 8px; border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(110,231,183,0.15);
+      }
+
+      h1 {
+        margin: 14px 0 10px;
+        line-height: 1.05;
+        font-size: clamp(32px, 4.4vw, 54px);
+        letter-spacing: -0.6px;
+      }
+      .highlight {
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .subtitle {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 58ch;
+      }
+
+      .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .card.pad { padding: 18px; }
+      .mini { color: var(--muted2); font-size: 13px; line-height: 1.5; }
+
+      .statgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 14px;
+      }
+      @media (max-width: 650px) { .statgrid { grid-template-columns: 1fr; } }
+      .stat {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 12px;
+      }
+      .stat strong { display: block; font-size: 18px; }
+      .stat span { color: var(--muted); font-size: 13px; }
+
+      .progress-wrap { margin-top: 14px; }
+      .progress-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+      .progress-top small { color: var(--muted2); }
+      .bar {
+        height: 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .fill {
+        height: 100%;
+        width: 10%; /* ✅ Update progress anytime. Example: 5/20 = 25% */
+        background: linear-gradient(90deg, rgba(110,231,183,0.85), rgba(96,165,250,0.75));
+      }
+
+      section { padding: 24px 0; }
+      .section-title { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.2px; }
+      .section-subtitle { margin: 0 0 16px; color: var(--muted); line-height: 1.6; }
+
+      .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      @media (max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
+
+      .steps { display: grid; gap: 10px; }
+      .step {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.04);
+      }
+      .num {
+        min-width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: rgba(0,0,0,0.85);
+        background: linear-gradient(135deg, rgba(110,231,183,0.9), rgba(96,165,250,0.8));
+      }
+      .step h3 { margin: 0 0 4px; font-size: 16px; }
+      .step p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+      .pillrow { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+      .pill {
+        font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+        color: var(--muted);
+      }
+
+      .faq details {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255,255,255,0.03);
+        padding: 12px 14px;
+      }
+      .faq details + details { margin-top: 10px; }
+      .faq summary { cursor: pointer; font-weight: 700; }
+      .faq p { color: var(--muted); line-height: 1.6; margin: 10px 0 0; }
+
+      footer {
+        padding: 22px 0 40px;
+        border-top: 1px solid var(--line);
+        color: var(--muted2);
+        font-size: 13px;
+      }
+      .footergrid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
+      @media (max-width: 900px) { .footergrid { grid-template-columns: 1fr; } }
+      .tiny { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+      .link { text-decoration: underline; text-underline-offset: 3px; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="brand">
+            <span style="display:inline-flex;align-items:center;gap:10px;">
+              <span class="dot"></span>
+              <span>Bibles for Kenya</span>
+            </span>
+            <span class="badge">Goal: 20 Bibles · 2026 Distribution</span>
+          </div>
+
+          <div class="navlinks">
+            <a class="btn btn-outline" href="#how-to-help">How to Help</a>
+            <a class="btn btn-outline" href="#impact">Impact</a>
+            <a class="btn btn-primary" href="#donate">Give Shipping Support</a>
+            <a class="btn btn-strong" href="#give-a-bible">Donate Bibles</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">
+              <span class="dot"></span>
+              Coordinated by St. Joseph House of Hope · Partnered with Christ Is The Answer Church (Lowell, MA)
+            </div>
+
+            <h1>
+              Put the Word in someone’s hands —
+              <span class="highlight">help us send 20 Bibles to Kenya</span>.
+            </h1>
+
+            <p class="subtitle">
+              We’re collecting gently-used, old, torn, and new Bibles — and raising
+              tax-deductible shipping support — to distribute across
+              <strong>500+ interdenominational congregations</strong> in
+              <strong>Kilifi, Nairobi, and Meru</strong> next year.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-strong" href="#give-a-bible">Donate Bibles</a>
+              <a class="btn btn-primary" href="#donate">Give Shipping Support</a>
+              <a class="btn" href="#contact">Contact Sammy</a>
+            </div>
+
+            <div class="statgrid">
+              <div class="stat">
+                <strong>20</strong>
+                <span>Bibles target</span>
+              </div>
+              <div class="stat">
+                <strong>500+</strong>
+                <span>Congregations reached</span>
+              </div>
+              <div class="stat">
+                <strong>3</strong>
+                <span>Kilifi · Nairobi · Meru</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <h2 style="margin:0 0 6px; font-size:18px;">Progress</h2>
+            <p class="mini" style="margin:0;">
+              Every Bible and every gift helps us complete the shipment and distribute
+              through trusted church networks on the ground.
+            </p>
+
+            <div class="progress-wrap">
+              <div class="progress-top">
+                <strong>Collected: <span class="highlight">2 / 20</span></strong>
+                <small>Update anytime</small>
+              </div>
+              <div class="bar"><div class="fill"></div></div>
+              <p class="mini" style="margin:10px 0 0;">
+                ✅ Accepting: old • torn • new • study Bibles • large print • children’s
+              </p>
+            </div>
+
+            <div class="pillrow">
+              <span class="pill">Tax-deductible gifts</span>
+              <span class="pill">Distribution in 2026</span>
+              <span class="pill">Simple accountability</span>
+            </div>
+
+            <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;" />
+
+            <p class="mini" style="margin:0 0 10px;">
+              Prefer to give by check?
+            </p>
+            <a class="btn btn-strong" href="#donate">See check instructions</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section id="impact">
+      <div class="container">
+        <h2 class="section-title">Why this matters</h2>
+        <p class="section-subtitle">
+          Many congregations share a few worn Bibles among many believers.
+          This drive helps place Scriptures into churches and hands that will
+          read, teach, and disciple — week after week.
+        </p>
+
+        <div class="grid2">
+          <div class="card pad">
+            <h3 style="margin:0 0 8px;">Where the Bibles go</h3>
+            <p class="mini" style="margin:0;">
+              Distributed to <strong>500+ interdenominational congregations</strong> across
+              <strong>Kilifi, Nairobi, and Meru</strong>, coordinated by St. Joseph House of Hope
+              with local church leadership and accountability.
+            </p>
+            <div class="pillrow">
+              <span class="pill">Church libraries</span>
+              <span class="pill">Youth & discipleship groups</span>
+              <span class="pill">New believers</span>
+              <span class="pill">Pastoral support</span>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <h3 style="margin:0 0 8px;">Who is coordinating</h3>
+            <p class="mini" style="margin:0;">
+              <strong>Coordinator:</strong> Sammy Maigwa Karuri<br />
+              <strong>Coordinating organization:</strong> St. Joseph House of Hope Foundation<br />
+              <strong>U.S. partner:</strong> Christ Is The Answer Church, Lowell, Massachusetts
+            </p>
+            <p class="tiny" style="margin:10px 0 0;">
+              Churches, families, and small groups can sponsor a box, donate a stack of used Bibles,
+              or help cover shipping.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-to-help">
+      <div class="container">
+        <h2 class="section-title">How you can help</h2>
+        <p class="section-subtitle">
+          Two simple ways to support this mission: donate Bibles, and/or help cover shipping.
+        </p>
+
+        <div class="grid2">
+          <div class="card pad" id="give-a-bible">
+            <h3 style="margin:0 0 10px;">1) Donate Bibles (old, torn, new)</h3>
+
+            <div class="steps">
+              <div class="step">
+                <div class="num">1</div>
+                <div>
+                  <h3>Gather any Bible you can spare</h3>
+                  <p>
+                    We accept gently used, old, and even torn Bibles. If it still
+                    carries the Word, we can use it.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">2</div>
+                <div>
+                  <h3>Drop off or mail it</h3>
+                  <p>
+                    <strong>Drop-off & mailing address:</strong><br />
+                    165 Jewett St, Lowell, MA 01850
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">3</div>
+                <div>
+                  <h3>We pack & prepare for shipment</h3>
+                  <p>
+                    Every Bible is counted toward the 20-Bible goal, packed safely,
+                    and prepared for distribution in Kenya.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-strong" href="#contact">Text/Call to Arrange Drop-off</a>
+              <a class="btn" href="#faq">Read FAQs</a>
+            </div>
+          </div>
+
+          <div class="card pad" id="donate">
+            <h3 style="margin:0 0 10px;">2) Give shipping support (tax-deductible)</h3>
+
+            <p class="mini" style="margin:0 0 10px;">
+              Your gift helps cover packing supplies and shipping costs so these Bibles can
+              reach Kenya and be distributed across the 500+ churches.
+            </p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="num">A</div>
+                <div>
+                  <h3>Give by check</h3>
+                  <p>
+                    <strong>Write checks to:</strong> Christ Is The Answer Church<br />
+                    <strong>Memo:</strong> Bibles for Kenya – Shipping<br />
+                    <strong>Mail/Drop off at:</strong> 165 Jewett St, Lowell, MA 01850
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">B</div>
+                <div>
+                  <h3>Need a receipt?</h3>
+                  <p>
+                    Gifts are tax-deductible to the extent allowed by law.
+                    We can provide a receipt upon request.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">C</div>
+                <div>
+                  <h3>Want to give another way?</h3>
+                  <p>
+                    If you prefer online giving, message Sammy and we’ll share the best option.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-strong" href="mailto:maigwa@gmail.com?subject=Bibles%20for%20Kenya%20-%20Shipping%20Gift%20Question">Email for giving options</a>
+              <a class="btn btn-primary" href="#contact">Text/WhatsApp</a>
+            </div>
+
+            <p class="tiny" style="margin-top: 12px;">
+              *Tax-deductibility depends on the receiving organization and your situation. We provide documentation where applicable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently asked questions</h2>
+
+        <div class="faq">
+          <details>
+            <summary>Do you really accept old or torn Bibles?</summary>
+            <p>
+              Yes. We accept old, worn, and torn Bibles as long as they are still usable.
+              If a Bible is extremely damaged, we may repurpose it responsibly.
+            </p>
+          </details>
+
+          <details>
+            <summary>What kinds of Bibles are most needed?</summary>
+            <p>
+              Any Bible helps. Study Bibles, large print, children’s Bibles, and standard
+              English Bibles are all welcome.
+            </p>
+          </details>
+
+          <details>
+            <summary>Where in Kenya will they be distributed?</summary>
+            <p>
+              The Bibles will be distributed across Kilifi, Nairobi, and Meru through a network
+              of 500+ interdenominational congregations, coordinated by St. Joseph House of Hope.
+            </p>
+          </details>
+
+          <details>
+            <summary>How is the financial gift used?</summary>
+            <p>
+              Shipping support covers packing supplies, shipping fees, and distribution logistics.
+              We keep the process simple and transparent.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is my donation tax-deductible?</summary>
+            <p>
+              Yes—shipping gifts given through Christ Is The Answer Church are tax-deductible to
+              the extent allowed by law. We can provide a receipt upon request.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          Want to donate Bibles, sponsor shipping, or partner as a church? Reach out directly.
+        </p>
+
+        <div class="grid2">
+          <div class="card pad">
+            <h3 style="margin:0 0 8px;">Coordinator</h3>
+            <p class="mini" style="margin:0;">
+              <strong>Sammy Maigwa Karuri</strong><br />
+              Email: <a class="link" href="mailto:maigwa@gmail.com">maigwa@gmail.com</a><br />
+              WhatsApp: <a class="link" href="https://wa.me/19782598623" target="_blank" rel="noopener">+1 (978) 259-8623</a><br />
+              Address: 165 Jewett St, Lowell, MA 01850
+            </p>
+
+            <div style="margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-strong" href="https://wa.me/19782598623" target="_blank" rel="noopener">WhatsApp Sammy</a>
+              <a class="btn btn-primary" href="mailto:maigwa@gmail.com?subject=Bibles%20for%20Kenya%20-%20I%20want%20to%20help">Email Sammy</a>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <h3 style="margin:0 0 8px;">Drop-off / mailing</h3>
+            <p class="mini" style="margin:0;">
+              <strong>Drop off or mail Bibles to:</strong><br />
+              165 Jewett St<br />
+              Lowell, MA 01850
+            </p>
+            <div class="pillrow">
+              <span class="pill">Old</span>
+              <span class="pill">Torn</span>
+              <span class="pill">New</span>
+              <span class="pill">Study</span>
+              <span class="pill">Children’s</span>
+              <span class="pill">Large Print</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footergrid">
+          <div>
+            <strong>Bibles for Kenya</strong>
+            <div class="tiny" style="margin-top:8px;">
+              Coordinated by St. Joseph House of Hope Foundation in partnership with
+              Christ Is The Answer Church (Lowell, MA). Distribution planned for 2026 across
+              500+ interdenominational congregations in Kilifi, Nairobi, and Meru.
+            </div>
+          </div>
+
+          <div>
+            <div class="tiny">
+              © <span id="year"></span> · bibles4kenya.com<br />
+              Check gifts: “Christ Is The Answer Church” (Memo: “Bibles for Kenya – Shipping”)
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
