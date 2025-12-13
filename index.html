@@ -289,7 +289,8 @@
           <div class="navlinks">
             <a class="btn btn-outline" href="#how-to-help">How to Help</a>
             <a class="btn btn-outline" href="#impact">Impact</a>
-            <a class="btn btn-primary" href="#donate">Give Shipping Support</a>
+            <a href="#donate" class="btn btn-strong">Donate Now</a>
+              Give Shipping Support</a>
             <a class="btn btn-strong" href="#give-a-bible">Donate Bibles</a>
           </div>
         </div>
@@ -469,7 +470,15 @@
 
           <div class="card pad" id="donate">
             <h3 style="margin:0 0 10px;">2) Give shipping support (tax-deductible)</h3>
+            <script async
+              src="https://js.stripe.com/v3/buy-button.js">
+            </script>
 
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SdyY2HaPQdO4FSXUZwKfCFx"
+              publishable-key="pk_live_51OcW3bHaPQdO4FSXGI0ERYnJDTGjS8O4iywXxRuwrgwYFQAvhKsOJg239QljtGytgydKDdmZhulYBWjJBP5XVt1U002nvqz717"
+            >
+            </stripe-buy-button>
             <p class="mini" style="margin:0 0 10px;">
               Your gift helps cover packing supplies and shipping costs so these Bibles can
               reach Kenya and be distributed across the 500+ churches.
