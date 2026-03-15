@@ -272,6 +272,32 @@
       .tiny { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
       .link { text-decoration: underline; text-underline-offset: 3px; }
     </style>
+      <!-- Fundraise Up: the new standard for online giving -->
+  <script>
+    (function(w,d,s,n,a){
+      if(!w[n]){
+        var l='call,catch,on,once,set,then,track,openCheckout'.split(','),
+            i,
+            o=function(n){
+              return 'function'==typeof n
+                ? o.l.push([arguments]) && o
+                : function(){ return o.l.push([n,arguments]) && o; }
+            },
+            t=d.getElementsByTagName(s)[0],
+            j=d.createElement(s);
+        j.async=!0;
+        j.src='https://cdn.fundraiseup.com/widget/' + a;
+        t.parentNode.insertBefore(j,t);
+        o.s=Date.now();
+        o.v=5;
+        o.h=w.location.href;
+        o.l=[];
+        for(i=0;i<8;i++) o[l[i]] = o(l[i]);
+        w[n]=o;
+      }
+    })(window,document,'script','FundraiseUp','AUDDJHNJ');
+  </script>
+  <!-- End Fundraise Up -->
   </head>
 
   <body>
@@ -288,7 +314,7 @@
           <div class="navlinks">
           <a class="btn btn-outline" href="#how-to-help">How to Help</a>
           <a class="btn btn-outline" href="#impact">Impact</a>
-          <a class="btn btn-strong" href="#donate">Give Shipping Support</a>
+          <a class="btn btn-strong" href="/?form=donate">Donate Now</a>
           <a class="btn btn-outline" href="#give-a-bible">Donate Bibles</a>
         </div>
 
@@ -543,9 +569,12 @@
                 <div>
                   <h3>Need a receipt?</h3>
                   <p>
-                    Gifts are tax-deductible to the extent allowed by law.
-                    We can provide a receipt upon request.
-                  </p>
+                    <h3>Need a receipt?</h3>
+<p>
+  Online gifts made through our donation form are processed by our fiscal sponsor, IFERS,
+  and donors receive tax-deductible donation documentation to the extent allowed by law.
+</p>
+                  
                 </div>
               </div>
 
@@ -565,9 +594,11 @@
               <a class="btn btn-primary" href="#contact">Text/WhatsApp</a>
             </div>
 
-            <p class="tiny" style="margin-top: 12px;">
-              *Tax-deductibility depends on the receiving organization and your situation. We provide documentation where applicable.
-            </p>
+            <summary>Is my donation tax-deductible?</summary>
+<p>
+  Yes. Online donations are processed through our fiscal sponsor, IFERS, a U.S. 501(c)(3),
+  and are tax-deductible to the extent allowed by law.
+</p>
           </div>
         </div>
       </div>
