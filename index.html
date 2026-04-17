@@ -20,17 +20,22 @@
 
     <style>
       :root {
-        --bg: #0b1220;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --muted2: rgba(255, 255, 255, 0.6);
-        --line: rgba(255, 255, 255, 0.12);
-        --accent: #6ee7b7;
-        --accent2: #60a5fa;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        --radius: 18px;
-      }
+  /* Light, warm, personal theme */
+  --bg: #fff9f0;                    /* Warm cream background */
+  --bg-alt: #ffffff;                /* Pure white for cards */
+  --card: #ffffff;                  /* Card background */
+  --text: #1a1a2e;                  /* Dark blue-gray for readability */
+  --text-muted: #4a5568;            /* Softer text for subtitles */
+  --text-light: #718096;            /* Lightest text */
+  --line: #e2e8f0;                  /* Soft border color */
+  --accent: #2575fc;                /* Your preferred purple-blue */
+  --accent2: #52c4cf;               /* Your preferred teal-green */
+  --accent-warm: #ff6b6b;           /* Warm accent for CTAs */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);  /* Softer shadow */
+  --shadow-hover: 0 20px 40px rgba(37, 117, 252, 0.15);
+  --radius: 18px;
+  --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+}
 
       * { box-sizing: border-box; }
       html, body { height: 100%; }
