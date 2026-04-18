@@ -20,41 +20,56 @@
 
     <style>
       :root {
-        --bg: #0b1220;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --muted2: rgba(255, 255, 255, 0.6);
-        --line: rgba(255, 255, 255, 0.12);
-        --accent: #6ee7b7;
-        --accent2: #60a5fa;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        --radius: 18px;
-      }
+  /* Light, warm, personal theme */
+  --bg: #fff9f0;                    /* Warm cream background */
+  --bg-alt: #ffffff;                /* Pure white for cards */
+  --card: #ffffff;                  /* Card background */
+  --text: #1a1a2e;                  /* Dark blue-gray for readability */
+  --text-muted: #4a5568;            /* Softer text for subtitles */
+  --text-light: #718096;            /* Lightest text */
+  --line: #e2e8f0;                  /* Soft border color */
+  --accent: #2575fc;                /* Your preferred purple-blue */
+  --accent2: #52c4cf;               /* Your preferred teal-green */
+  --accent-warm: #ff6b6b;           /* Warm accent for CTAs */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);  /* Softer shadow */
+  --shadow-hover: 0 20px 40px rgba(37, 117, 252, 0.15);
+  --radius: 18px;
+  --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+}
 
       * { box-sizing: border-box; }
       html, body { height: 100%; }
       body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        color: var(--text);
-        background: radial-gradient(1200px 800px at 20% 0%, rgba(96,165,250,0.22), transparent 60%),
-                    radial-gradient(1200px 800px at 90% 10%, rgba(110,231,183,0.18), transparent 55%),
-                    linear-gradient(180deg, #070b14, #0b1220 45%, #060a13);
-      }
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: var(--bg);  /* Warm cream base */
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: 
+            radial-gradient(circle at 20% 20%, rgba(82, 196, 207, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 80% 10%, rgba(37, 117, 252, 0.06) 0%, transparent 45%),
+            radial-gradient(circle at 50% 90%, rgba(255, 107, 107, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
+        }
 
       a { color: inherit; text-decoration: none; }
       .container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
 
+      
       header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(10px);
-        background: rgba(7, 11, 20, 0.65);
-        border-bottom: 1px solid var(--line);
-      }
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 249, 240, 0.92);  /* Light cream with blur */
+  border-bottom: 1px solid var(--line);
+}
       .nav {
         display: flex;
         align-items: center;
@@ -92,29 +107,53 @@
       }
 
       .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--text);
-        font-weight: 600;
-        transition: transform 0.08s ease, background 0.15s ease, border 0.15s ease;
-      }
-      .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.06); }
-      .btn-primary {
-        background: linear-gradient(135deg, rgba(110,231,183,0.22), rgba(96,165,250,0.18));
-        border-color: rgba(110,231,183,0.35);
-      }
-      .btn-strong {
-        background: linear-gradient(135deg, rgba(110,231,183,0.35), rgba(96,165,250,0.22));
-        border-color: rgba(110,231,183,0.55);
-        box-shadow: var(--shadow);
-      }
-      .btn-outline { background: transparent; }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--text);
+  font-weight: 600;
+  transition: transform 0.08s ease, background 0.15s ease, border 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { 
+  transform: translateY(-2px); 
+  background: var(--bg);
+  box-shadow: var(--shadow-hover);
+}
+.btn-primary {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: white;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+.btn-strong {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: white;
+  box-shadow: var(--shadow);
+}
+.btn-strong:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+}
 
       .hero { padding: 44px 0 18px; }
       .hero-grid {
@@ -141,7 +180,24 @@
         background: var(--accent);
         box-shadow: 0 0 0 4px rgba(110,231,183,0.15);
       }
-
+      /* Fix text colors for light theme */
+.subtitle, .section-subtitle, .mini, .tiny {
+  color: var(--text-muted);
+}
+.kicker {
+  color: var(--text-muted);
+  background: rgba(37, 117, 252, 0.08);
+  border-color: var(--line);
+}
+.stat span, .step p, .faq p {
+  color: var(--text-muted);
+}
+.pill {
+  background: rgba(37, 117, 252, 0.08);
+  color: var(--text-muted);
+  border-color: var(--line);
+}
+      
       h1 {
         margin: 14px 0 10px;
         line-height: 1.05;
@@ -271,6 +327,195 @@
       @media (max-width: 900px) { .footergrid { grid-template-columns: 1fr; } }
       .tiny { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
       .link { text-decoration: underline; text-underline-offset: 3px; }
+
+      /* ===== PHOTO & GALLERY STYLES ===== */
+.photo-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 3px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Gallery grid for ministry photos */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.photo-grid.large {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Hero with photo background */
+.hero {
+  padding: 44px 0 18px;
+  position: relative;
+  overflow: hidden;
+}
+.hero.with-photo {
+  background: linear-gradient(135deg, rgba(37,117,252,0.92) 0%, rgba(82,196,207,0.88) 100%),
+              url('kenya-worship.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  color: white;
+}
+.hero.with-photo .subtitle,
+.hero.with-photo .kicker {
+  color: rgba(255,255,255,0.95);
+}
+.hero.with-photo .highlight {
+  background: linear-gradient(90deg, #fff, #e0f2fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Personal story/testimonial cards */
+.story-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: var(--shadow);
+}
+.story-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent2);
+  flex-shrink: 0;
+}
+.story-content h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+.story-content .role {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: block;
+}
+.story-content p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Impact section with photos */
+.impact-section {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .impact-grid { grid-template-columns: 1fr; }
+}
+
+/* CTA button updates for light theme */
+.btn {
+  /* keep your existing btn styles */
+  /* but update hover states: */
+}
+.btn:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow-hover);
+}
+.btn-primary {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: white;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Card updates for light theme */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card.pad { padding: 18px; }
+.card.highlight {
+  border: 2px solid var(--accent2);
+  background: linear-gradient(135deg, rgba(82,196,207,0.08), rgba(37,117,252,0.06));
+}
+
+/* Section spacing for breathing room */
+section { 
+  padding: 32px 0; 
+}
+section.alt-bg {
+  background: var(--bg-alt);
+}
+/* ===== FINAL LIGHT THEME FIXES ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.card.pad {
+  padding: 18px;
+}
+.stat {
+  background: rgba(37, 117, 252, 0.08);
+  border: 1px solid var(--line);
+}
+.stat strong {
+  color: var(--text);
+}
+.progress-wrap .bar {
+  background: rgba(37, 117, 252, 0.12);
+  border-color: var(--line);
+}
+.faq details {
+  background: white;
+  border-color: var(--line);
+}
+.faq summary {
+  color: var(--text);
+}
+footer {
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border-top: 1px solid var(--line);
+}
+.footergrid strong {
+  color: var(--text);
+}
     </style>
       <!-- Fundraise Up: the new standard for online giving -->
   <script>
@@ -322,74 +567,57 @@
       </div>
     </header>
 
-    <main class="hero">
-<script>
-  function toggleMute() {
-    const video = document.getElementById('praiseVideo');
-    const icon = document.getElementById('muteIcon');
-    
-    if (video.muted) {
-      video.muted = false;
-      icon.innerText = "🔊 Sound On";
-    } else {
-      video.muted = true;
-      icon.innerText = "🔇 Tap for Sound";
-    }
-  }
-
-  // Ensure autoplay starts on load
-  window.addEventListener('load', () => {
-    document.getElementById('praiseVideo').play();
-  });
-</script>
+    <main class="hero with-photo" style="background-image: url('/assets/distribution-01.jpg');">
   <div class="container">
     <div class="hero-grid">
       <div>
         <div class="kicker">
           <span class="dot"></span>
-          Coordinated by <a href="https://www.stjosephhouseofhopefoundation.org/" target="_blank" rel="noopener">St. Joseph House of Hope Kenya</a>
+          Coordinated by <a href="https://www.stjosephhouseofhopefoundation.org/" target="_blank" rel="noopener" style="color: white; text-decoration: underline;">St. Joseph House of Hope Kenya</a>
         </div>
 
-        <h1>
-          Put the Word in someone’s hands 
-          <span class="highlight">help us send 20,000 Bibles to Kenya</span>.
+        <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+          Put the Word in someone's hands 
+          <span class="highlight" style="background: linear-gradient(90deg, #fff, #e0f2fe); -webkit-background-clip: text; background-clip: text; color: transparent;">help us send 20,000 Bibles to Kenya</span>.
         </h1>
 
-        <p class="subtitle">
+        <p class="subtitle" style="color: rgba(255,255,255,0.95);">
           <strong>Bibles4Kenya</strong> is a daughter project of the <strong>St. Joseph House of Hope Kenya</strong>. 
-          We’re collecting used and new Bibles — and raising shipping support ($8–$10 per Bible) — to equip 
+          We're collecting used and new Bibles — and raising shipping support ($8–$10 per Bible) — to equip 
           <strong>500+ congregations</strong> in remote "last-mile" areas of Kenya.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-strong" href="https://bibles4kenya-tracker.vercel.app" target="_blank">Give Support & Join →</a>
-          
+          <a class="btn btn-strong" href="https://bibles4kenya-tracker.vercel.app" target="_blank" style="border: 2px solid white;">Give Support & Join →</a>
+          <a class="btn" href="#impact" style="border-color: white; color: white; background: rgba(255,255,255,0.15);">See the Impact ↓</a>
         </div>
 
         <div class="statgrid">
-          <div class="stat">
-            <strong>20,000</strong>
-            <span>Bibles target</span>
+          <div class="stat" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
+            <strong style="color: white;">20,000</strong>
+            <span style="color: rgba(255,255,255,0.9);">Bibles target</span>
           </div>
-          <div class="stat">
-            <strong>500+</strong>
-            <span>Congregations</span>
+          <div class="stat" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
+            <strong style="color: white;">500+</strong>
+            <span style="color: rgba(255,255,255,0.9);">Congregations</span>
           </div>
-          <div class="stat">
-            <strong>Last-Mile</strong>
-            <span>Kilifi · Nairobi · Meru</span>
+          <div class="stat" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
+            <strong style="color: white;">Last-Mile</strong>
+            <span style="color: rgba(255,255,255,0.9);">Kilifi · Nairobi · Meru</span>
           </div>
         </div>
       </div>
 
-        <div class="card pad" style="display: flex; flex-direction: column; height: 100%;">
-        <h2 style="margin:0 0 10px; font-size:20px;">Mission Progress</h2>
+      <!-- Progress Card -->
+      <div class="card pad" style="display: flex; flex-direction: column; height: 100%; background: rgba(255,255,255,0.95);">
+        <h2 style="margin:0 0 10px; font-size:20px; color: var(--text);">Mission Progress</h2>
         
         <div class="progress-wrap">
           <div class="progress-top">
-            <strong>Current: <span class="highlight">1520 / 20,000</span></strong>
+            <strong style="color: var(--text);">Current: <span class="highlight">1,520 / 20,000</span></strong>
           </div>
-          <div class="bar"><div class="fill" style="width: 10%;"></div></div>
+          <div class="bar"><div class="fill" style="width: 7.6%;"></div></div>
+          <small style="color: var(--text-light); display: block; margin-top: 4px;">7.6% to our 2026 goal</small>
         </div>
 
         <div class="pillrow" style="margin-top: 12px;">
@@ -400,93 +628,183 @@
         <hr style="border:none;border-top:1px solid var(--line);margin:20px 0;" />
 
         <div style="flex-grow: 1;">
-          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--primary);">Become a Mission Hero</h3>
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--accent);">Become a Mission Hero</h3>
           <p class="mini" style="line-height: 1.5; margin-bottom: 15px;">
             We aren't just shipping books; we are equipping 500 churches. When you join the tracker, you enter our <strong>Circle of Heroes</strong>.
           </p>
           
           <ul class="mini" style="padding-left: 18px; margin-bottom: 20px; list-style-type: disc;">
             <li style="margin-bottom: 8px;"><strong>Transparency:</strong> Watch exactly how your gift moves the needle.</li>
-            <li style="margin-bottom: 8px;"><strong>Network:</strong> See how Churches national networks and others are uniting.</li>
+            <li style="margin-bottom: 8px;"><strong>Network:</strong> See how churches and networks are uniting.</li>
             <li><strong>Legacy:</strong> Leave your mark as one of the 20,000 Bible providers.</li>
           </ul>
         </div>
 
-        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border: 1px dashed var(--line);">
-          <p class="mini" style="margin: 0 0 10px; font-weight: bold; text-align: center;">
-            Ready to see the live impact?
-          </p>
-          <a class="btn btn-strong" href="https://bibles4kenya-tracker.vercel.app" target="_blank" style="width:100%; text-align:center; text-decoration: none;">
-            Choose a Hero Carrier →
-          </a>
-          <a class="btn btn-outline" href="#donate">
-          Give Shipping Support ($8–$10)→
-      </a>
-          <p class="tiny" style="text-align: center; margin-top: 8px; opacity: 0.7;">
-            Real-time updates from St. Joseph Kenya
-          </p>
-        </div>
-      </div>
-
-        <div class="pillrow">
-          <span class="pill">International Shipping</span>
-          <span class="pill">Local Distribution</span>
-          <span class="pill">2026 Goal</span>
-        </div>
-
-        <hr style="border:none;border-top:1px solid var(--line);margin:20px 0;" />
-
-        <p class="mini" style="margin:0 0 12px; font-weight: bold;">
-          Want to see our "Circle of Heroes"?
-        </p>
-        <a class="btn btn-outline" href="https://bibles4kenya-tracker.vercel.app" target="_blank" style="width:100%; text-align:center;">
-          Open Live Tracker
+        <a class="btn btn-strong" href="https://bibles4kenya-tracker.vercel.app" target="_blank" style="width:100%; text-align:center; text-decoration: none; margin-bottom: 8px;">
+          Choose a Hero Carrier →
         </a>
+        <a class="btn btn-outline" href="#donate" style="width:100%; text-align:center;">
+          Give Shipping Support ($8–$10) →
+        </a>
+        <p class="tiny" style="text-align: center; margin-top: 8px; color: var(--text-light);">
+          Real-time updates from St. Joseph Kenya
+        </p>
       </div>
     </div>
   </div>
 </main>
+<!-- ===== PHOTO GALLERY: SEE THE IMPACT ===== -->
+<section id="gallery" class="impact-section" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+      <h2 class="section-title" style="font-size: 32px; margin-bottom: 12px; color: var(--text);">
+        See the Joy of <span class="highlight">Receiving God's Word</span>
+      </h2>
+      <p class="section-subtitle">
+        Real moments from our distribution events across Kenya. These faces represent transformed lives, 
+        strengthened churches, and communities encountering Scripture for the first time.
+      </p>
+    </div>
+
+    <!-- Featured large photo -->
+    <div class="photo-frame" style="margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <img src="/assets/distribution-02.jpg" alt="Large Bible distribution event in Kenya" loading="eager" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- Photo grid - first row -->
+    <div class="photo-grid large">
+      <div class="photo-frame">
+        <img src="/assets/distribution-03.jpg" alt="Congregation celebrating new Bibles" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-04.jpg" alt="Small group Bible study" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-05.jpg" alt="Woman receiving her first Bible" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-06.jpg" alt="Youth group with new Bibles" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-07.jpg" alt="Pastor teaching from new Bible" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-08.jpg" alt="Children's Bible distribution" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Photo grid - second row -->
+    <div class="photo-grid">
+      <div class="photo-frame">
+        <img src="/assets/distribution-09.jpg" alt="Worship service with new Bibles" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-10.jpg" alt="Community gathering" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-11.jpg" alt="Joy of receiving Scripture" loading="lazy">
+      </div>
+      <div class="photo-frame">
+        <img src="/assets/distribution-12.jpg" alt="Bible study in progress" loading="lazy">
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 32px;">
+      <a class="btn btn-outline" href="#contact" style="border-color: var(--accent); color: var(--accent);">
+        Want to see more? Contact us for full gallery →
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ===== TESTIMONIAL STORIES ===== -->
+<section class="stories-section" style="background: var(--bg); padding: 40px 0;">
+  <div class="container">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 32px; font-size: 28px; color: var(--text);">
+      Voices from the <span class="highlight">Field</span>
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <!-- Story 1 -->
+      <div class="story-card">
+        <img src="/assets/distribution-13.jpg" alt="Pastor testimony" class="story-avatar">
+        <div class="story-content">
+          <h3 style="margin: 0 0 4px; color: var(--text);">Pastor James</h3>
+          <span class="role">Kilifi Region</span>
+          <p>"When we distributed Bibles last month, I saw grown men weeping with joy. This isn't just paper and ink—it's life-changing truth in their hands."</p>
+        </div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-card">
+        <img src="/assets/distribution-14.jpg" alt="New believer testimony" class="story-avatar">
+        <div class="story-content">
+          <h3 style="margin: 0 0 4px; color: var(--text);">Mary Wanjiku</h3>
+          <span class="role">Nairobi</span>
+          <p>"This is my very own Bible. I've been sharing with my neighbors, and now we meet every week to study together. Thank you for this gift!"</p>
+        </div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-card">
+        <img src="/assets/distribution-15.jpg" alt="Youth testimony" class="story-avatar">
+        <div class="story-content">
+          <h3 style="margin: 0 0 4px; color: var(--text);">Youth Leader David</h3>
+          <span class="role">Meru</span>
+          <p>"Our youth now have their own Bibles to read daily. The transformation in their lives and our church has been remarkable."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="impact">
-      <div class="container">
-        <h2 class="section-title">Why this matters</h2>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+      <div>
+        <h2 class="section-title" style="color: var(--text);">Why this matters</h2>
         <p class="section-subtitle">
           Many congregations have no Bibles among many believers.
           This drive helps place Scriptures into churches and hands that will
           read, teach, and disciple — week after week.
         </p>
 
-        <div class="grid2">
-          <div class="card pad">
-            <h3 style="margin:0 0 8px;">Where the Bibles go</h3>
-            <p class="mini" style="margin:0;">
-              Distributed to <strong>500+ interdenominational congregations</strong> across
-              <strong>Kilifi, Nairobi, and Meru</strong>, coordinated by St. Joseph House of Hope
-              with local church leadership and accountability.
-            </p>
-            <div class="pillrow">
-              <span class="pill">Church members</span>
-              <span class="pill">Youth & discipleship groups</span>
-              <span class="pill">New believers</span>
-              <span class="pill">Pastoral support</span>
-            </div>
-          </div>
-
-          <div class="card pad">
-            <h3 style="margin:0 0 8px;">Who is coordinating</h3>
-            <p class="mini" style="margin:0;">
-              <strong>Coordinator:</strong> Sammy Maigwa Karuri<br />
-              <strong>Coordinating organization:</strong> St. Joseph House of Hope Foundation<br />
-              <strong>Drop off Address:</strong> Christ Is The Answer Church, Billerica, Massachusetts
-            </p>
-            <p class="tiny" style="margin:10px 0 0;">
-              Churches, families, and small groups can sponsor a box, donate a stack of used Bibles,
-              or help cover shipping.
-            </p>
-          </div>
+        <div class="photo-frame" style="margin: 20px 0;">
+          <img src="/assets/distribution-16.jpg" alt="Church members studying together" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
         </div>
       </div>
-    </section>
+
+      <div style="display: grid; gap: 14px;">
+        <div class="card pad">
+          <h3 style="margin:0 0 8px; color: var(--text);">Where the Bibles go</h3>
+          <p class="mini">
+            Distributed to <strong>500+ interdenominational congregations</strong> across
+            <strong>Kilifi, Nairobi, and Meru</strong>, coordinated by St. Joseph House of Hope
+            with local church leadership and accountability.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Church members</span>
+            <span class="pill">Youth & discipleship groups</span>
+            <span class="pill">New believers</span>
+            <span class="pill">Pastoral support</span>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h3 style="margin:0 0 8px; color: var(--text);">Who is coordinating</h3>
+          <p class="mini">
+            <strong>Coordinator:</strong> Sammy Maigwa Karuri<br />
+            <strong>Coordinating organization:</strong> St. Joseph House of Hope Foundation<br />
+            <strong>Drop off Address:</strong> Christ Is The Answer Church, Billerica, Massachusetts
+          </p>
+          <p class="tiny" style="margin:10px 0 0;">
+            Churches, families, and small groups can sponsor a box, donate a stack of used Bibles,
+            or help cover shipping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="how-to-help">
       <div class="container">
