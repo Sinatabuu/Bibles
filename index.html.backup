@@ -160,7 +160,7 @@
     }
     .hero.with-photo {
       background: linear-gradient(135deg, rgba(37,117,252,0.92) 0%, rgba(82,196,207,0.88) 100%),
-                  url('/assets/distribution-01.jpg');
+                  url('assets/distribution-01.jpg');
       background-size: cover;
       background-position: center 30%;
       color: white;
@@ -471,7 +471,7 @@
       <div class="nav">
         <div class="brand">
           <a href="/" style="display:inline-flex;align-items:center;gap:10px;">
-            <img src="/images/logo.png" alt="Bibles for Kenya logo" class="logo" onerror="this.style.display='none'">
+            <img src="images/logo.png" alt="Bibles for Kenya logo" class="logo" onerror="this.style.display='none'">
             <span>Bibles for Kenya</span>
           </a>
           <span class="badge">Goal: 20,000 Bibles · 2026 Distribution</span>
@@ -493,7 +493,7 @@
         <div>
           <div class="kicker">
             <span class="dot"></span>
-            Coordinated by <a href="https://www.sjhoh.org/" target="_blank" rel="noopener" style="color: white; text-decoration: underline;">St. Joseph House of Hope Kenya</a>
+            Coordinated by <a href="https://www.stjosephhouseofhopefoundation.org/" target="_blank" rel="noopener" style="color: white; text-decoration: underline;">St. Joseph House of Hope Kenya</a>
           </div>
 
           <h1>
@@ -534,19 +534,16 @@
           
           <div class="progress-wrap">
             <div class="progress-top">
-              <strong style="color: var(--text);">Current: <span class="highlight">5,000 / 20,000</span></strong>
+              <strong style="color: var(--text);">Current: <span class="highlight">1,520 / 20,000</span></strong>
             </div>
             <div class="bar"><div class="fill"></div></div>
-            <small style="color: var(--text-light); display: block; margin-top: 4px;">45% to our 2026 goal</small>
+            <small style="color: var(--text-light); display: block; margin-top: 4px;">7.6% to our 2026 goal</small>
           </div>
 
           <div class="pillrow" style="margin-top: 12px;">
             <span class="pill">2026 Goal</span>
             <span class="pill">Last-Mile Delivery</span>
           </div>
-
-          cd
-          
 
           <hr style="border:none;border-top:1px solid var(--line);margin:20px 0;" />
 
@@ -585,51 +582,51 @@
           See the Joy of <span class="highlight">Receiving God's Word</span>
         </h2>
         <p class="section-subtitle">
-          These faces represent transformed lives, 
+          Real moments from our distribution events across Kenya. These faces represent transformed lives, 
           strengthened churches, and communities encountering Scripture for the first time.
         </p>
       </div>
 
       <!-- Featured large photo -->
       <div class="photo-frame" style="margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        <img src="/assets/distribution-02.jpg" alt="Large Bible distribution event in Kenya" loading="eager" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27800%27 height=%27400%27%3E%3Crect fill=%27%23ddd%27 width=%27800%27 height=%27400%27/%3E%3Ctext fill=%27%23666%27 font-family=%27sans-serif%27 font-size=%2720%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27%3EDistribution Photo%3C/text%3E%3C/svg%3E'">
+        <img src="assets/distribution-02.jpg" alt="Large Bible distribution event in Kenya" loading="eager" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27800%27 height=%27400%27%3E%3Crect fill=%27%23ddd%27 width=%27800%27 height=%27400%27/%3E%3Ctext fill=%27%23666%27 font-family=%27sans-serif%27 font-size=%2720%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27%3EDistribution Photo%3C/text%3E%3C/svg%3E'">
       </div>
 
       <!-- Photo grid - first row -->
       <div class="photo-grid large">
         <div class="photo-frame">
-          <img src="/assets/distribution-03.jpg" alt="Congregation celebrating new Bibles" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-03.jpg" alt="Congregation celebrating new Bibles" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-04.jpg" alt="Small group Bible study" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-04.jpg" alt="Small group Bible study" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-05.jpg" alt="Woman receiving her first Bible" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-05.jpg" alt="Woman receiving her first Bible" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-06.jpg" alt="Youth group with new Bibles" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-06.jpg" alt="Youth group with new Bibles" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-07.jpg" alt="Pastor teaching from new Bible" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-07.jpg" alt="Pastor teaching from new Bible" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-08.jpg" alt="Children's Bible distribution" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-08.jpg" alt="Children's Bible distribution" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
 
       <!-- Photo grid - second row -->
       <div class="photo-grid">
         <div class="photo-frame">
-          <img src="/assets/distribution-09.jpg" alt="Worship service with new Bibles" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-09.jpg" alt="Worship service with new Bibles" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-10.jpg" alt="Community gathering" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-10.jpg" alt="Community gathering" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-11.jpg" alt="Joy of receiving Scripture" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-11.jpg" alt="Joy of receiving Scripture" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="photo-frame">
-          <img src="/assets/distribution-12.jpg" alt="Bible study in progress" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/distribution-12.jpg" alt="Bible study in progress" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
 
@@ -651,7 +648,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
         <!-- Story 1 -->
         <div class="story-card">
-          <img src="/assets/distribution-13.jpg" alt="Pastor testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
+          <img src="assets/distribution-13.jpg" alt="Pastor testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
           <div class="story-content">
             <h3>Pastor James</h3>
             <span class="role">Kilifi Region</span>
@@ -661,7 +658,7 @@
 
         <!-- Story 2 -->
         <div class="story-card">
-          <img src="/assets/distribution-14.jpg" alt="New believer testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
+          <img src="assets/distribution-14.jpg" alt="New believer testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
           <div class="story-content">
             <h3>Mary Wanjiku</h3>
             <span class="role">Nairobi</span>
@@ -671,7 +668,7 @@
 
         <!-- Story 3 -->
         <div class="story-card">
-          <img src="/assets/distribution-15.jpg" alt="Youth testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
+          <img src="assets/distribution-15.jpg" alt="Youth testimony" class="story-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2770%27 height=%2770%27%3E%3Crect fill=%27%2352c4cf%27 width=%2770%27 height=%2770%27/%3E%3Ctext fill=%27white%27 font-family=%27sans-serif%27 font-size=%2730%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.35em%27%3E👤%3C/text%3E%3C/svg%3E'">
           <div class="story-content">
             <h3>Youth Leader David</h3>
             <span class="role">Meru</span>
@@ -695,7 +692,7 @@
           </p>
 
           <div class="photo-frame" style="margin: 20px 0;">
-            <img src="/assets/distribution-16.jpg" alt="Church members studying together" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27600%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27600%27 height=%27200%27/%3E%3Ctext fill=%27%23666%27 font-family=%27sans-serif%27 font-size=%2718%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27%3EChurch Study%3C/text%3E%3C/svg%3E'">
+            <img src="assets/distribution-16.jpg" alt="Church members studying together" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27600%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27600%27 height=%27200%27/%3E%3Ctext fill=%27%23666%27 font-family=%27sans-serif%27 font-size=%2718%27 x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27%3EChurch Study%3C/text%3E%3C/svg%3E'">
           </div>
         </div>
 
@@ -797,10 +794,10 @@
             <div class="step">
               <div class="num">A</div>
               <div>
-                <h3>Your gift is secure</h3>
+                <h3>Give by check</h3>
                 <p>
-                  <strong>Memo:</strong> Visit our donation page<br />
-                  <strong>We are 501(c)(3) tax-exempt</strong> (EIN): 72-1585854
+                  <strong>Memo:</strong> Bibles for Kenya – Shipping<br />
+                  <strong>Mail/Drop off at:</strong> 165 Jewett St, Lowell, MA 01850
                 </p>
               </div>
             </div>
