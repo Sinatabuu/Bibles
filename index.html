@@ -274,12 +274,19 @@
     .progress-wrap { margin-top: 14px; }
     .progress-top {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
       align-items: baseline;
       margin-bottom: 8px;
     }
     .progress-top small { color: var(--text-light); }
+    .progress-count {
+      display: inline-block;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
     .bar {
       height: 12px;
       border-radius: 999px;
@@ -534,7 +541,7 @@
           
           <div class="progress-wrap">
             <div class="progress-top">
-              <strong style="color: var(--text);">Current: <span class="highlight">9,400 / 20,000</span></strong>
+              <strong style="color: var(--text);">Current: <span class="progress-count">9,400 / 20,000</span></strong>
             </div>
             <div class="bar"><div class="fill"></div></div>
             <small style="color: var(--text-light); display: block; margin-top: 4px;">47% to our 2026 goal</small>
